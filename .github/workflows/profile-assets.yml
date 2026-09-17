@@ -61,6 +61,11 @@ jobs:
       # starts from the latest commit and doesn't conflict with them.
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest changes
+        run: git pull origin main
 
       - name: Generate snake.svg
         uses: Platane/snk@v3
